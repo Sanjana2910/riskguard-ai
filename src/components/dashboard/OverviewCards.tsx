@@ -10,12 +10,12 @@ interface OverviewCardsProps {
 }
 
 const cards = [
-  { key: "total", label: "Total Transactions", icon: Activity, colorClass: "text-primary" },
-  { key: "successful", label: "Successful Payments", icon: CheckCircle2, colorClass: "text-success" },
-  { key: "failed", label: "Failed Payments", icon: XCircle, colorClass: "text-danger" },
-  { key: "alerts", label: "Risk Alerts", icon: AlertTriangle, colorClass: "text-warning", glow: true },
-  { key: "revenue", label: "Revenue", icon: DollarSign, colorClass: "text-chart-2", isCurrency: true },
-] as const;
+  { key: "total" as const, label: "Total Transactions", icon: Activity, colorClass: "text-primary", glow: false, isCurrency: false },
+  { key: "successful" as const, label: "Successful Payments", icon: CheckCircle2, colorClass: "text-success", glow: false, isCurrency: false },
+  { key: "failed" as const, label: "Failed Payments", icon: XCircle, colorClass: "text-danger", glow: false, isCurrency: false },
+  { key: "alerts" as const, label: "Risk Alerts", icon: AlertTriangle, colorClass: "text-warning", glow: true, isCurrency: false },
+  { key: "revenue" as const, label: "Revenue", icon: DollarSign, colorClass: "text-chart-2", glow: false, isCurrency: true },
+];
 
 export function OverviewCards({ total, successful, failed, alerts, revenue }: OverviewCardsProps) {
   const values: Record<string, number> = { total, successful, failed, alerts, revenue };
